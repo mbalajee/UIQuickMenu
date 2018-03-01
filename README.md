@@ -62,5 +62,8 @@ To add image for a menu item, simply give the image name in QuickMenuOptions.
 In  "func setupQuickMenuOptions()" replace, setTitle with setImage for a UIButton.
 ```
 
+#### QuickMenu in action
+
+![alt text](https://github.com/mbalajee/UIQuickMenu/blob/master/quick_menu_demo.gif)
 
     
