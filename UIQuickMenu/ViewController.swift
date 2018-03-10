@@ -15,7 +15,7 @@ class ViewController: UIViewController, UIQuickMenuSelectionDelegate {
         
         
         // Adding quick menu
-        if let quickMenu = UIQuickMenu(withMenuOptions: ["quick_home_address", "quick_camera", "quick_message", "quick_phone", "quick_print"]) {
+        if let quickMenu = UIQuickMenu(withMenuOptions: ["quick_home_address", "quick_camera"]) {
             quickMenu.menuSelectionDelegate = self
             view.addSubview(quickMenu)
         }

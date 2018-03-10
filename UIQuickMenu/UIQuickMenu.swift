@@ -123,13 +123,26 @@ class UIQuickMenu: UIView {
             button.frame = CGRect(x: 0, y: 0, width: widthMenu, height: widthMenu)
             button.center = buttonQuickMenu.center
             button.layer.cornerRadius = widthMenu / 2
-            button.backgroundColor = option.isEmpty ? UIColor.clear : UIColor.white
             button.setImage(UIImage(named: option), for: .normal)
             button.contentEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10)
             button.isEnabled = false
             button.alpha = 0
             button.tag = Int(index)
             button.addTarget(self, action: #selector(onClickMenuOption(_:)), for: .touchUpInside)
+            
+            if !option.isEmpty {
+                
+                // border
+                button.layer.borderWidth = 1.0
+                button.layer.borderColor = UIColor.white.cgColor
+                
+                // shadow
+                button.layer.shadowColor = UIColor.gray.cgColor
+                button.layer.shadowOffset = CGSize(width: 3, height: 3)
+                button.layer.shadowOpacity = 0.7
+                button.layer.shadowRadius = 4.0
+            }
+            
             addSubview(button)
             
             menu.append(button)
@@ -189,7 +202,7 @@ class UIQuickMenu: UIView {
             
             if completed {
                 for button in self.menu {
-                    button.isEnabled = show
+                    button.isEnabled = show && (button.image(for: .normal) != nil)
                 }
             }
         }
@@ -237,7 +250,7 @@ class UIQuickMenu: UIView {
             gradient.frame = bounds
             gradient.startPoint = CGPoint(x: 0, y: 1)
             gradient.endPoint   = CGPoint(x: 1, y: 0)
-            gradient.colors = [UIColor.lightGray.cgColor, UIColor.white.cgColor]
+            gradient.colors = [UIColor.white.cgColor, UIColor(red: 244/255, green: 246/255, blue: 246/255, alpha: 1.0).cgColor]
             
             let shapeMask = CAShapeLayer()
             shapeMask.path = arcBackgroundPath.cgPath
