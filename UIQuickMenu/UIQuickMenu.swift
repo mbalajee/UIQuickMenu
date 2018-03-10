@@ -6,39 +6,9 @@
 import UIKit
 import GLKit
 
-enum QuickMenuOptions {
-    
-    case QUICK_SMILE
-    case QUICK_LAUGH
-    case QUICK_LOVE
-    case QUICK_THOUGHT
-    case QUICK_NONE
-    
-    var name: String  {
-        
-        switch self {
-        case .QUICK_SMILE:
-            return "😀"
-            
-        case .QUICK_LAUGH:
-            return "😂"
-            
-        case .QUICK_LOVE:
-            return "😍"
-            
-        case .QUICK_THOUGHT:
-            return "🤔"
-            
-        case .QUICK_NONE:
-            return ""
-        }
-    }
-}
-
 protocol UIQuickMenuSelectionDelegate {
-    func quickMenu(didSelectAtIndex index: Int, menuOption: QuickMenuOptions)
+    func quickMenu(didSelectAtIndex index: Int, menuOption: String)
 }
-
 
 class UIQuickMenu: UIView {
     
@@ -50,7 +20,7 @@ class UIQuickMenu: UIView {
     private var arcBackgroundPath: UIBezierPath?
     
     // Image file name for menu
-    private var menuOptions = [QuickMenuOptions] ()
+    private var menuOptions = [String] ()
     
     // Background shadow
     private var shadow: Shadow!
@@ -65,11 +35,9 @@ class UIQuickMenu: UIView {
     // Where menu items should be positioned at the end of animation
     private var endPoints = [CGPoint]()
     
-    // Width for each menu (determined dynamically from total menu count)
-    private var widthMenu: CGFloat = 0.0
     
     // This class must be instantiated with menu images, it fails otherwise
-    convenience init?(withMenuOptions options: [QuickMenuOptions]) {
+    convenience init?(withMenuOptions options: [String]) {
         
         guard options.count > 0 else {
             return nil
@@ -86,15 +54,15 @@ class UIQuickMenu: UIView {
         setupQuickMenuOptions()
     }
     
-    private func initMenuOptions(_ options: [QuickMenuOptions]) {
+    private func initMenuOptions(_ options: [String]) {
         
         // Inserting empty menu at both ends to make menu items regular in size
         // Space is equally divided between menu items, so for two menu items,
         // size of each menu item will be bigger
         if options.count < 3 {
-            menuOptions.append(.QUICK_NONE)
+            menuOptions.append("")
             menuOptions.append(contentsOf: options)
-            menuOptions.append(.QUICK_NONE)
+            menuOptions.append("")
         } else {
             menuOptions.append(contentsOf: options)
         }
@@ -145,7 +113,7 @@ class UIQuickMenu: UIView {
         
         let circumferenceAfterMargin = circumference - (marginBetweenMenu * (menuCount - 1))
         
-        widthMenu = (circumferenceAfterMargin / menuCount)
+        let widthMenu = (circumferenceAfterMargin / menuCount)
         
         var index: CGFloat = 0
         
@@ -155,8 +123,9 @@ class UIQuickMenu: UIView {
             button.frame = CGRect(x: 0, y: 0, width: widthMenu, height: widthMenu)
             button.center = buttonQuickMenu.center
             button.layer.cornerRadius = widthMenu / 2
-            button.backgroundColor = option == .QUICK_NONE ? UIColor.clear : UIColor.white
-            button.setTitle(option.name, for: .normal)
+            button.backgroundColor = option.isEmpty ? UIColor.clear : UIColor.white
+            button.setImage(UIImage(named: option), for: .normal)
+            button.contentEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10)
             button.isEnabled = false
             button.alpha = 0
             button.tag = Int(index)

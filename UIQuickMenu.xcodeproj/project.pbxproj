@@ -13,7 +13,18 @@
 		AE6BF7F42047CDC900D1CD55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE6BF7F32047CDC900D1CD55 /* Assets.xcassets */; };
 		AE6BF7F72047CDC900D1CD55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE6BF7F52047CDC900D1CD55 /* LaunchScreen.storyboard */; };
 		AE6BF8002047CDF400D1CD55 /* UIQuickMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6BF7FF2047CDF400D1CD55 /* UIQuickMenu.swift */; };
+		AE6BF8372047D8EE00D1CD55 /* UIQuickMenuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6BF8362047D8EE00D1CD55 /* UIQuickMenuUITests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AE6BF8392047D8EE00D1CD55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE6BF7E12047CDC900D1CD55 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE6BF7E82047CDC900D1CD55;
+			remoteInfo = UIQuickMenu;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		AE6BF7E92047CDC900D1CD55 /* UIQuickMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIQuickMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,10 +35,20 @@
 		AE6BF7F62047CDC900D1CD55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE6BF7F82047CDC900D1CD55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE6BF7FF2047CDF400D1CD55 /* UIQuickMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIQuickMenu.swift; sourceTree = "<group>"; };
+		AE6BF8342047D8EE00D1CD55 /* UIQuickMenuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIQuickMenuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE6BF8362047D8EE00D1CD55 /* UIQuickMenuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIQuickMenuUITests.swift; sourceTree = "<group>"; };
+		AE6BF8382047D8EE00D1CD55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		AE6BF7E62047CDC900D1CD55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE6BF8312047D8EE00D1CD55 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				AE6BF7EB2047CDC900D1CD55 /* UIQuickMenu */,
+				AE6BF8352047D8EE00D1CD55 /* UIQuickMenuUITests */,
 				AE6BF7EA2047CDC900D1CD55 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				AE6BF7E92047CDC900D1CD55 /* UIQuickMenu.app */,
+				AE6BF8342047D8EE00D1CD55 /* UIQuickMenuUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -75,6 +98,15 @@
 			path = Support;
 			sourceTree = "<group>";
 		};
+		AE6BF8352047D8EE00D1CD55 /* UIQuickMenuUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AE6BF8362047D8EE00D1CD55 /* UIQuickMenuUITests.swift */,
+				AE6BF8382047D8EE00D1CD55 /* Info.plist */,
+			);
+			path = UIQuickMenuUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -95,6 +127,24 @@
 			productReference = AE6BF7E92047CDC900D1CD55 /* UIQuickMenu.app */;
 			productType = "com.apple.product-type.application";
 		};
+		AE6BF8332047D8EE00D1CD55 /* UIQuickMenuUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE6BF83D2047D8EE00D1CD55 /* Build configuration list for PBXNativeTarget "UIQuickMenuUITests" */;
+			buildPhases = (
+				AE6BF8302047D8EE00D1CD55 /* Sources */,
+				AE6BF8312047D8EE00D1CD55 /* Frameworks */,
+				AE6BF8322047D8EE00D1CD55 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AE6BF83A2047D8EE00D1CD55 /* PBXTargetDependency */,
+			);
+			name = UIQuickMenuUITests;
+			productName = UIQuickMenuUITests;
+			productReference = AE6BF8342047D8EE00D1CD55 /* UIQuickMenuUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -108,6 +158,11 @@
 					AE6BF7E82047CDC900D1CD55 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+					};
+					AE6BF8332047D8EE00D1CD55 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = AE6BF7E82047CDC900D1CD55;
 					};
 				};
 			};
@@ -125,6 +180,7 @@
 			projectRoot = "";
 			targets = (
 				AE6BF7E82047CDC900D1CD55 /* UIQuickMenu */,
+				AE6BF8332047D8EE00D1CD55 /* UIQuickMenuUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -137,6 +193,13 @@
 				AE6BF7F72047CDC900D1CD55 /* LaunchScreen.storyboard in Resources */,
 				AE6BF7F42047CDC900D1CD55 /* Assets.xcassets in Resources */,
 				AE6BF7F22047CDC900D1CD55 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE6BF8322047D8EE00D1CD55 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,7 +216,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AE6BF8302047D8EE00D1CD55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE6BF8372047D8EE00D1CD55 /* UIQuickMenuUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AE6BF83A2047D8EE00D1CD55 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AE6BF7E82047CDC900D1CD55 /* UIQuickMenu */;
+			targetProxy = AE6BF8392047D8EE00D1CD55 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		AE6BF7F02047CDC900D1CD55 /* Main.storyboard */ = {
@@ -312,6 +391,36 @@
 			};
 			name = Release;
 		};
+		AE6BF83B2047D8EE00D1CD55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 75936TN654;
+				INFOPLIST_FILE = UIQuickMenuUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = learn.UIQuickMenuUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = UIQuickMenu;
+			};
+			name = Debug;
+		};
+		AE6BF83C2047D8EE00D1CD55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 75936TN654;
+				INFOPLIST_FILE = UIQuickMenuUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = learn.UIQuickMenuUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = UIQuickMenu;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -329,6 +438,15 @@
 			buildConfigurations = (
 				AE6BF7FC2047CDC900D1CD55 /* Debug */,
 				AE6BF7FD2047CDC900D1CD55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE6BF83D2047D8EE00D1CD55 /* Build configuration list for PBXNativeTarget "UIQuickMenuUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE6BF83B2047D8EE00D1CD55 /* Debug */,
+				AE6BF83C2047D8EE00D1CD55 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

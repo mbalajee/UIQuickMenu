@@ -15,15 +15,15 @@ class ViewController: UIViewController, UIQuickMenuSelectionDelegate {
         
         
         // Adding quick menu
-        if let quickMenu = UIQuickMenu(withMenuOptions: [.QUICK_LAUGH, .QUICK_LOVE, .QUICK_SMILE, .QUICK_THOUGHT]) {
+        if let quickMenu = UIQuickMenu(withMenuOptions: ["quick_home_address", "quick_camera", "quick_message", "quick_phone", "quick_print"]) {
             quickMenu.menuSelectionDelegate = self
             view.addSubview(quickMenu)
         }
     }
     
     
-    func quickMenu(didSelectAtIndex index: Int, menuOption: QuickMenuOptions) {
-        print("Menu \(menuOption.name) selected at \(index)")
+    func quickMenu(didSelectAtIndex index: Int, menuOption: String) {
+        print("Menu \(menuOption) selected at \(index)")
     }
 
 }
